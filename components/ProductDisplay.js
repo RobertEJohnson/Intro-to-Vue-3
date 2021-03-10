@@ -67,7 +67,7 @@ app.component('product-display', {
             return this.variants[this.selectedVariant].image
         },
         inStock() {
-            return this.variants[this.selectedVariant].image
+            return this.variants[this.selectedVariant].quantity
         },
         shipping() {
             if(this.premium){
