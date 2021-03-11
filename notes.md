@@ -27,3 +27,5 @@ In the above code, ```updateCart``` is a method that lives upon the methods prop
 An important thing to note is that when using props on a component
     - Make sure to use a v-bind directive if referencing data/methods/computed
       - If you don't use a : you will end up with JUST A STRING. Also no bound value.
+
+It looks like I'm at the point where I could definitely benefit from using Vuex, trying to pass events up is even more cumbersome than in React.
