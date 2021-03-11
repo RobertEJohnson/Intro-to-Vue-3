@@ -39,6 +39,7 @@ app.component('product-display', {
           v-on:click="addToCart">
           Add to Cart
         </button>
+        <remove-button :itemId="selectedId" @search-cart="removeFromCart"/>
       </div>
     </div>
   </div>`,
@@ -56,10 +57,13 @@ app.component('product-display', {
   },
   methods: {
       addToCart() {
-          this.cart += 1
+          this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
       },
       updateVariant(index) {
           this.selectedVariant = index
+      },
+      removeFromCart(id){
+          this.$emit("remove-from-cart", id)
       }
   },
   computed: {
@@ -77,6 +81,9 @@ app.component('product-display', {
           return 'Free'
         }
         return 2.99
+      },
+      selectedId(){
+          return this.variants[this.selectedVariant].id;
       }
   }
 })
